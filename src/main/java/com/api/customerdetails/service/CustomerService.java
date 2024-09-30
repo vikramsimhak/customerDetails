@@ -16,7 +16,7 @@ public interface CustomerService {
 
     List<Customers> getByCustomerName(String customerName, Pageable pageable);
 
-    List<Customers> getByCustomerId(String customerId);
+    //List<Customers> getByCustomerId(String customerId);
 
     Optional<Customers> getById(long Id);
 

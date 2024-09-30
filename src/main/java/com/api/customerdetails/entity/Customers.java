@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import java.util.List;
 
@@ -11,18 +12,17 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 public class Customers {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long Id;
-    private String customerId;
+    private Long customerId;
     private String customerName;
     private String customerMailId;
 
-    @OneToMany(mappedBy = "customers")
+    @OneToMany(targetEntity = CustomerAddress.class,cascade = CascadeType.ALL)
+    @JoinColumn(name = "customerId",referencedColumnName = "customerId")
     private List<CustomerAddress> customerAddress;
-
-    //ACCOUNT_NUMBER|TRX_AMOUNT|DESCRIPTION|TRX_DATE|TRX_TIME|CUSTOMER_ID
 
 
 }

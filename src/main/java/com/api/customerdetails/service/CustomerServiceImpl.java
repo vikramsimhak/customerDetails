@@ -37,10 +37,10 @@ public class CustomerServiceImpl implements CustomerService {
         return customersRepository.findByCustomerName(customerName,pageable);
     }
 
-    @Override
+    /*@Override
     public List<Customers> getByCustomerId(String customerId) {
         return customersRepository.findByCustomerId(customerId);
-    }
+    }*/
 
     @Override
     public Optional<Customers> getById(long Id) {

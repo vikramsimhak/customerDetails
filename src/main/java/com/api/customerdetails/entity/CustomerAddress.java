@@ -13,12 +13,9 @@ import java.util.List;
 @AllArgsConstructor
 public class CustomerAddress {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
     private String street;
     private String city;
 
-    @ManyToOne
-    @JoinColumn(name = "customerId")
-    private Customers customers;
+
 }
